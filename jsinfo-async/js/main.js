@@ -56,14 +56,40 @@
 
 // TASKS - Promise chaining
 
-// -- Promise: then versus catch
+// // -- Promise: then versus catch
 
-// Are these code fragments equal? In other words, do they behave the same way in any circumstances, for any handler functions?
-promise.then(f1).catch(f2);
-// Versus:
-promise.then(f1, f2);
-// no, not equal => in #1 if error happens in f1 its handled by the catch, but is not in #2, b/c errors are passed down chain
+// // Are these code fragments equal? In other words, do they behave the same way in any circumstances, for any handler functions?
+// promise.then(f1).catch(f2);
+// // Versus:
+// promise.then(f1, f2);
+// // no, not equal => in #1 if error happens in f1 its handled by the catch, but is not in #2, b/c errors are passed down chain
 
 ///////////////////////////////////////////////////////////////////////////////
 
 // TASKS - Error handling with promises
+
+// // -- Error in setTimeout
+
+// // What do you think? Will the .catch trigger? Explain your answer.
+// new Promise(function(resolve, reject) {
+//   setTimeout(() => {
+//     throw new Error("Whoops!");
+//   }, 1000);
+// }).catch(alert);
+// // no, because setTimeout is not a promise, so it'll auto-resolve the initial promise
+// // CORRECT -- additionally, the error is still generated, but it is uncaught and so put in console
+
+///////////////////////////////////////////////////////////////////////////////
+
+// TASKS - Async/await
+
+// -- Rewrite using async/await
+
+
+
+// -- Rewrite "rethrow" with async/await
+
+
+
+// -- Call async from non-async
+
